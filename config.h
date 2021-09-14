@@ -12,8 +12,8 @@ static const char col_gray1[]       = "#222222"; /* background color */
 static const char col_gray2[]       = "#2b2f33"; /* inactive window border color */
 static const char col_gray3[]       = "#d0d0d0"; /* font color */
 static const char col_gray4[]       = "#f0f0f0"; /* current tag and current window font color */
-static const char col_cyan[]        = "#2d72ae"; /* top bar second color */
-static const char act_win_bord[]    = "#307ec2"; /* active window border color */
+static const char col_cyan[]        = "#524f95"; /* top bar second color */
+static const char act_win_bord[]    = "#454290"; /* active window border color */
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
