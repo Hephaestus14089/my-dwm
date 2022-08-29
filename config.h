@@ -64,6 +64,9 @@ static const char *termcmd[]    = { "alacritty", NULL }; /* Default terminal emu
 static const char *rangercmd[]  = { "alacritty", "-e", "ranger", NULL};
 static const char *brupcmd[]    = { "light", "-A", "5", NULL};
 static const char *brdowncmd[]  = { "light", "-U", "5", NULL};
+static const char *volupcmd[]   = { "amixer", "-D", "pulse", "sset", "Master", "2%+", NULL};
+static const char *voldowncmd[] = { "amixer", "-D", "pulse", "sset", "Master", "2%-", NULL};
+static const char *volmutecmd[] = { "amixer", "-D", "pulse", "sset", "Master", "0%", NULL};
 
 #include "shiftview.c"
 
@@ -71,6 +74,9 @@ static Key keys[] = {
     /* modifier             key                         function        argument */
 	{ 0,                    XF86XK_MonBrightnessUp,     spawn,          {.v = brupcmd } },
 	{ 0,                    XF86XK_MonBrightnessDown,   spawn,          {.v = brdowncmd } },
+	{ 0,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = volupcmd } },
+	{ 0,                    XF86XK_AudioLowerVolume,    spawn,          {.v = voldowncmd } },
+	{ 0,                    XF86XK_AudioMute,           spawn,          {.v = volmutecmd } },
 	{ MODKEY,               XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,               XK_r,                       spawn,          {.v = rangercmd } },
