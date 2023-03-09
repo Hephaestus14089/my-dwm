@@ -67,6 +67,7 @@ static const char *brdowncmd[]  = { "light", "-U", "5", NULL};
 static const char *volupcmd[]   = { "amixer", "-D", "pulse", "sset", "Master", "2%+", NULL};
 static const char *voldowncmd[] = { "amixer", "-D", "pulse", "sset", "Master", "2%-", NULL};
 static const char *volmutecmd[] = { "amixer", "-D", "pulse", "sset", "Master", "0%", NULL};
+static const char *sscmd[]      = { "scrot", "-fs", NULL };
 
 #include "shiftview.c"
 
@@ -80,6 +81,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,               XK_r,                       spawn,          {.v = rangercmd } },
+	{ MODKEY|ShiftMask,     XK_s,                       spawn,          {.v = sscmd } },
 	{ MODKEY,               XK_b,                       togglebar,      {0} },
 	{ MODKEY,               XK_j,                       focusstack,     {.i = +1 } },
 	{ MODKEY,               XK_k,                       focusstack,     {.i = -1 } },
