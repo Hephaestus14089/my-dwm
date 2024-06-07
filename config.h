@@ -62,7 +62,7 @@ static const char dmenuhpapps[] = "librewolf-bin,brave-bin,torbrowser-launcher,s
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-hp", dmenuhpapps, NULL };
+static const char *dmenucmd[]   = { "dmenu_run", "-i", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-hp", dmenuhpapps, NULL };
 static const char *termcmd[]    = { "alacritty", NULL }; /* Default terminal emulator for dwm */
 static const char *rangercmd[]  = { "alacritty", "-e", "ranger", NULL};
 static const char *brupcmd[]    = { "light", "-A", "5", NULL};
