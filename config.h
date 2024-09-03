@@ -58,7 +58,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* high priority apps for dmenu */
-static const char dmenuhpapps[] = "librewolf-bin,brave-bin,torbrowser-launcher,signal-desktop,virt-manager";
+static const char dmenuhpapps[] = "librewolf-bin,brave-bin,torbrowser-launcher,signal-desktop,virt-manager,logseq";
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
