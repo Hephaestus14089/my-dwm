@@ -65,14 +65,15 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-hp", dmenuhpapps, NULL };
 static const char *termcmd[]       = { "alacritty", NULL }; /* Default terminal emulator for dwm */
 static const char *rangercmd[]     = { "alacritty", "-e", "ranger", NULL};
+static const char *yazicmd[]       = { "alacritty", "-e", "yazi", NULL};
 static const char *brupcmd[]       = { "xbacklight", "-inc", "5", NULL};
 static const char *brdowncmd[]     = { "xbacklight", "-dec", "5", NULL};
 static const char *kbdbrupcmd[]    = { "kbdbacklight", "-inc", "5", NULL};
 static const char *kbdbrdowncmd[]  = { "kbdbacklight", "-dec", "5", NULL};
-static const char *volupcmd[]   = { "amixer", "set", "Master", "2%+", NULL};
-static const char *voldowncmd[] = { "amixer", "set", "Master", "2%-", NULL};
-static const char *volmutecmd[] = { "amixer", "set", "Master", "0%", NULL};
-static const char *sscmd[]      = { "scrot", "-fs", NULL };
+static const char *volupcmd[]      = { "amixer", "set", "Master", "2%+", NULL};
+static const char *voldowncmd[]    = { "amixer", "set", "Master", "2%-", NULL};
+static const char *volmutecmd[]    = { "amixer", "set", "Master", "0%", NULL};
+static const char *sscmd[]         = { "scrot", "-fs", NULL };
 
 #include "shiftview.c"
 
@@ -88,6 +89,7 @@ static Key keys[] = {
 	{ MODKEY,               XK_p,                       spawn,          {.v = dmenucmd } },
 	{ MODKEY,               XK_Return,                  spawn,          {.v = termcmd } },
 	{ MODKEY,               XK_r,                       spawn,          {.v = rangercmd } },
+	{ MODKEY,               XK_e,                       spawn,          {.v = yazicmd } },
 	{ MODKEY|ShiftMask,     XK_s,                       spawn,          {.v = sscmd } },
 	{ MODKEY,               XK_b,                       togglebar,      {0} },
 	{ MODKEY,               XK_j,                       focusstack,     {.i = +1 } },
