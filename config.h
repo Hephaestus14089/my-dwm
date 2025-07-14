@@ -57,13 +57,16 @@ static const Layout layouts[] = {
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
+/* high priority apps for dmenu */
+static const char dmenuhpapps[] = "librewolf,brave-bin,torbrowser-launcher,signal-desktop,logseq-desktop-bin";
+
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
-static const char *termcmd[]    = { "alacritty", NULL }; /* Default terminal emulator for dwm */
-static const char *rangercmd[]  = { "alacritty", "-e", "ranger", NULL};
-static const char *brupcmd[]    = { "xbacklight", "-inc", "5", NULL};
-static const char *brdowncmd[]  = { "xbacklight", "-dec", "5", NULL};
+static const char *dmenucmd[]   = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, "-hp", dmenuhpapps, NULL };
+static const char *termcmd[]       = { "alacritty", NULL }; /* Default terminal emulator for dwm */
+static const char *rangercmd[]     = { "alacritty", "-e", "ranger", NULL};
+static const char *brupcmd[]       = { "xbacklight", "-inc", "5", NULL};
+static const char *brdowncmd[]     = { "xbacklight", "-dec", "5", NULL};
 static const char *kbdbrupcmd[]    = { "kbdbacklight", "-inc", "5", NULL};
 static const char *kbdbrdowncmd[]  = { "kbdbacklight", "-dec", "5", NULL};
 static const char *volupcmd[]   = { "amixer", "set", "Master", "2%+", NULL};
@@ -77,7 +80,7 @@ static Key keys[] = {
     /* modifier             key                         function        argument */
 	{ 0,                    XF86XK_MonBrightnessUp,     spawn,          {.v = brupcmd } },
 	{ 0,                    XF86XK_MonBrightnessDown,   spawn,          {.v = brdowncmd } },
-  { 0,                    XF86XK_KbdBrightnessUp,     spawn,          {.v = kbdbrupcmd } },
+        { 0,                    XF86XK_KbdBrightnessUp,     spawn,          {.v = kbdbrupcmd } },
 	{ 0,                    XF86XK_KbdBrightnessDown,   spawn,          {.v = kbdbrdowncmd } },
 	{ 0,                    XF86XK_AudioRaiseVolume,    spawn,          {.v = volupcmd } },
 	{ 0,                    XF86XK_AudioLowerVolume,    spawn,          {.v = voldowncmd } },
